@@ -15,7 +15,15 @@ public class ReviewBO {
 	// id 값을 전달 바당서 해당하는 리뷰 값을 리턴한다
 	public Review getReview(int id) {
 		
-		return reviewDAO.selectReview(id);
-		
+		return reviewDAO.selectReview(id);	
 	}
+	
+	public int addReviewByObject(Review review) {
+		return reviewDAO.insertReviewByObject(review);
+	}
+	
+	public int addReviewByField(int storeId, String menu, String userName, double point, String review) {
+		 return reviewDAO.insertReviewByField(storeId, menu, userName, userName, review);
+	}
+	
 }
