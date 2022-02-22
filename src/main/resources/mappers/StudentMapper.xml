@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace = "com.ashspell.ex.lesson04.dao.StudentDAO">
+ 	
+ 	<insert id = "insertStudent" parameterType = "com.ashspell.ex.lesson04.model.Student"
+ 	useGeneratedKeys="true" keyProperty="id">
+ 		
+ 		INSERT INTO `student_info`
+ 		(
+ 			`name`
+ 			, `phonenumber`
+ 			, `email`
+ 			, `dreamjob`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		
+ 		) VALUE (
+ 			#{name}
+ 			, #{phonenumber}
+ 			, #{email}
+ 			, #{dreamjob}
+ 			, now()
+ 			, now()
+ 		)
+ 	</insert>
+ 	
+ 	
+ </mapper>

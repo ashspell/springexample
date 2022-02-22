@@ -23,7 +23,7 @@ public class UserController {
 	@RequestMapping("/ex01")
 	public String getUserView(Model model) {
 		// 가장 최근 추가된 사용자 정보 
-		User user = userBO.getLastUser();
+		Usermodel user = userBO.getLastUser();
 		
 		model.addAttribute("result", user);
 		

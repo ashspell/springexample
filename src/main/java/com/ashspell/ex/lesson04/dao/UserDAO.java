@@ -8,13 +8,16 @@ import com.ashspell.ex.lesson04.model.Usermodel;
 @Repository
 public interface UserDAO {
 	public Usermodel selectLastUser();
-}
+
 
 	public int insertUser(
 			@Param("name") String name,
 			@Param("birth") String birth,
 			@Param("introduce") String introduce,
-			@Param("email") String email)
+			@Param("email") String email) ;
+	}
+
 	
+
 	
 
