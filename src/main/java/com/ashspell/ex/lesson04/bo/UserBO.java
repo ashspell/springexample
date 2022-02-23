@@ -17,7 +17,9 @@ public class UserBO {
 		return userDAO.selectLastUser();
 	}
 	
-	public UserDAO addUser() {
-		return userDAO;
+	public int addUser(String name, String yyyymmdd, String introduce, String email) {
+		return userDAO.insertUser(name, yyyymmdd, introduce, email);
 	}
+	
+	
 }

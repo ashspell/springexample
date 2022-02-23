@@ -2,7 +2,7 @@ package com.ashspell.ex.lesson04;
 
 
 
-import org.apache.tomcat.jni.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
