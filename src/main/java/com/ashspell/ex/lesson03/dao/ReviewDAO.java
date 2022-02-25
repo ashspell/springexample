@@ -17,7 +17,7 @@ public interface ReviewDAO {
 			@Param("storeId") int storeId,
 			@Param("menu") String menu,
 			@Param("userName") String userName,
-			@Param("point") String point,
+			@Param("point") double point,
 			@Param("review") String review);
 			
 	

@@ -17,13 +17,12 @@ public class ReviewController {
 	
 	@ResponseBody
 	@RequestMapping("/lesson03/ex01")
-	public Review review (
-	// @RequestParam("id") int id { // 기본 사용법 필수 파라미터
-	// @RequestParam(value ="id" , required= true)int id) { // 필수 파라미터
-	// @RequestParam(value ="id" , required= false)Integer id) { // 비 필수 파라미터
-	   @RequestParam(value ="id" , defaultValue= "1") int id) {
-		   
-		   
+	public Review review(
+//			@RequestParam("id") int id) {  // 기본 사용법 필수 파라미터
+//			@RequestParam(value="id", required=true) int id) {  // 필수 파라미터 
+//			@RequestParam(value="id", required=false) Integer id) {  // 비 필수 파라미터 
+			@RequestParam(value="id", defaultValue="1") int id) {
+		
 //		if(id == null) {
 //			id = 1;
 //		}
@@ -31,20 +30,25 @@ public class ReviewController {
 		return reviewBO.getReview(id);
 	}
 	
+	@ResponseBody
 	@RequestMapping("/lesson03/ex02")
 	public String ex02() {
-		// 객체 형태로 파라미터 활용하기
+		// 객체 형태로 파라미터 활용하기 
 //		Review review = new Review();
 //		review.setStoreId(2);
 //		review.setMenu("뿌링클");
 //		review.setUserName("김인규");
 //		review.setPoint(4.0);
-//		review.setReview("진리입니다");
+//		review.setReview("역시 뿌링클은 진리 입니다");
 //		
-//	int count = reviewBO.addReviewByObject(review);
+//		int count = reviewBO.addReviewByObject(review);
 		
 		int count = reviewBO.addReviewByField(4, "콤비네이션피자", "김바다", 4.5, "할인도 많이 받고 잘먹었어요");
 		
-		return "삽입결과 : " + count;
+		return "삽입 결과 : " + count;
 	}
+	
+	
+	
+
 }
