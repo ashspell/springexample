@@ -25,16 +25,16 @@
 		$(document).ready(function() {
 			
 			$("#userForm").on("submit", function() {
-				let name = $("#nameinput").val();
-				let birth = $("#birthinput").val();
-				let introduce = $("#introduceinput").val().trim();
-				let email = $("#emailinput").val();
+				let name = $("#nameInput").val();
+				let birth = $("#birthInput").val();
+				let introduce = $("#introduceInput").val().trim();
+				let email = $("#emailInput").val();
 				
 				// 유효성 검사
 				
 				if(name == "") {
 					alert("이름을 입력하세요");
-					return false;
+						return false;
 				}
 				
 				if(birth == "") {
@@ -71,7 +71,53 @@
 			});
 	
 			
+			$("#addBtn").on("click", function() {
+				let name = $("#nameInput").val();
+				let	birth = $("#birthInput").val();
+				let introduce = $("#introduceInput").val().trim();
+				let email = $("#emailInput").val();
+				
+				// 유효성 검사
+				
+				if(name == "") {
+					alert("이름을 입력하세요!!");
+					return ;
+				} 
+				
+				if(birth == "") {
+					alert("생년월일을 입력하세요!!");
+					return ;
+				}
+				
+				if(introduce == "") {
+					alert("자기소개를 입력하세요");
+					return ;
+				}
+				
+				if(email == "") {
+					alert("이메일을 입력하세요");
+					return ;
+				}
+				
+				$.ajax({
+					type:"post",
+					url:"/lesson06/add_user",
+					data:{"name":name, "birth":birth, "introduce":introduce, "email":email},
+					success:function(data) {
+						alert(data);
+						location.href = "/lesson04/ex01";
+					},
+					error:function() {
+						alert("입력 에러");
+					}
+				});
+				
+			});
+			
+			
 		});
+			
+		
 	
 	</script>
 </body>
