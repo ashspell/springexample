@@ -29,12 +29,27 @@
 	   	, `createdAt`
 	   	, `updatedAt`
   	 ) VALUE (
-  	 	
+  	 	#{name}
+  	 	, #{yyyymmdd}
+  	 	, #{email}
+  	 	, #{introduce}
+  	 	, now()
+  	 	, now()
   	 
   	 )
-  	 
-  	 
   	
   	</insert>
+
+	<select id = "selectNameCount" parameterType= "string" resultType = "int">
+		SELECT
+			count(*)
+		FROM
+			`new_user`
+		WHERE
+		 	
+		 	
+	
+	</select>
+
   
   </mapper>

@@ -1,5 +1,8 @@
 package com.ashspell.ex.lesson06;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,6 +43,24 @@ public class Lesson06Controller {
 		}
 	}
 	
+	// 이름 중복 확인 API
+	@GetMapping("/lesson06/is_duplicate")
+	public Map<String, Boolean> isDuplicate(@RequestParam("name")String name) {
+		boolean isDuplicate = userBO.isDuplicate(name);
+		//중복인경우
+		// {"is_duplicate":true}
+		//중복이 아닌경우
+		// {"us_duplicate":false}
+		
+		Map<String , Boolean> resultMap = new HashMap<>();
+		if(isDulicate == true) {
+			resultMap.put("is_duplicate", true);
+		} else {
+			resultMap.put("is_duplicate", false);
+		}
+		
+		return resultMap;
+	}
 	
 	
 }
